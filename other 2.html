@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juego RPG basado en texto</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  #narration {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  #options {
+    display: flex;
+    flex-direction: column;
+  }
+  button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  #character-info {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+</style>
+</head>
+<body>
+  <h1>Juego RPG basado en texto</h1>
+
+  <div id="narration">
+    <p>Aquí se mostrará la narración y eventos del juego.</p>
+  </div>
+
+  <div id="options">
+    <button>Opción 1</button>
+    <button>Opción 2</button>
+    <button>Opción 3</button>
+  </div>
+
+  <div id="character-info">
+    <p>Nombre del personaje: <span id="character-name">Héroe</span></p>
+    <p>Salud: <span id="character-health">100</span></p>
+    <p>Nivel: <span id="character-level">1</span></p>
+  </div>
+
+  <button id="reset">Reiniciar juego</button>
+</body>
+</html>
