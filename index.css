@@ -16,8 +16,8 @@ body{
     background-repeat: no-repeat; 
 	background-color: #8b6e53;
 	font-family: 'pixel';
+	font-size: xx-large;
 }
-
 .b-example-divider {
   	height: 2rem;
   	background-color: rgba(0, 0, 0, .1);
