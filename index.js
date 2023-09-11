@@ -1,9 +1,12 @@
 const life = document.getElementById('life')
 const text = document.getElementById('text')
+const textScene = document.getElementById('text-scene')
 const first = document.getElementById('first')
 const second = document.getElementById('second')
+const scene = document.getElementById("scene")
+const content = document.getElementById("content")
+const next = document.getElementById("continue")
 let view = 0
-life.innerHTML = 100
 
 const options = (e) => {
     const id = e.srcElement.id
@@ -12,11 +15,11 @@ const options = (e) => {
     }
     switch (id) {
         case "first":
-            life.innerHTML = Number(life.innerHTML) + db[view].option.o1.life
+            showScene(db[view].option.o1.scene)
             break
         
         case "second":
-            life.innerHTML = Number(life.innerHTML) + db[view].option.o2.life
+            showScene(db[view].option.o2.scene)
             break
         
         default:
@@ -26,6 +29,18 @@ const options = (e) => {
     setView()
 }
 
+const showScene = (s) => {
+    textScene.innerHTML = s
+    scene.style.display = "block"
+    content.style.display = "none"
+    next.style.display = "block"
+    console.log(next)
+}
+
+const showMessage = (s) => {
+
+}
+
 const setView = () => {
     const actual = db[view]
     if (actual == null) {
@@ -33,11 +48,21 @@ const setView = () => {
     }
     console.log(actual)
     text.innerHTML = actual.text
-    first.innerText = actual.option.o1.text
-    second.innerText = actual.option.o2.text
+    if (view < db.length - 1){
+        first.innerText = actual.option.o1.text
+        second.innerText = actual.option.o2.text
+    }
+    else {
+        first.style.display = "none"
+        second.style.display = "none"
+    }
 }
 
 first.addEventListener("click", options)
 second.addEventListener("click", options)
-
+next.addEventListener("click", () => {
+    scene.style.display = "none"
+    content.style.display = "block"
+    next.style.display = "none"
+})
 setView()

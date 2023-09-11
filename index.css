@@ -3,10 +3,19 @@
     margin: 0;
     
 }
+
+@font-face {
+	font-family: 'pixel';
+	src: url('font/pixelart.ttf');
+	font-style: normal;
+	font-weight: normal;
+}
+
 body{ 
     background-size: cover;
     background-repeat: no-repeat; 
-	background-color: #bea082;
+	background-color: #8b6e53;
+	font-family: 'pixel';
 }
 
 .b-example-divider {
@@ -173,5 +182,60 @@ h3{
 }
 
 
+#text {
+	
+	min-height: 55vh;
+}
 
+#game {
+	width: 85%;
+	background: #ccc;
+	border-radius: 10px;
+	margin: 50px auto;
+}
 
+#description {
+	padding: 10px;
+	text-align: center;
+}
+
+#dialogue {
+	padding: 10px;
+}
+
+#choices {
+	padding: 10px;
+}
+
+#choices button {
+	padding: 5px 10px;
+	margin: 5px;
+	border-radius: 5px;
+	border: 1px solid #999;
+}
+
+.chosenChoice {
+	padding: 7px;
+	background: #333;
+	color: #fff;
+}
+
+.separador{
+	height: 40px;
+	width: 500px;
+}
+
+.barra{
+	height: 40px;
+	width: 100%;
+}
+
+#id {
+	width: 100%;
+	height: 100%;
+	background-color: #8b6e53;
+	display: none;
+}
+#continue{
+	display: none;
+}

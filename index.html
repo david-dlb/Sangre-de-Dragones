@@ -1,145 +1,70 @@
 <html>
 
 <head>
-    <style>
-        #game {
-            width: 85%;
-            background: #ccc;
-            border-radius: 10px;
-            margin: 50px auto;
-        }
-
-        #description {
-            padding: 10px;
-            text-align: center;
-        }
-
-        #dialogue {
-            padding: 10px;
-        }
-
-        #choices {
-            padding: 10px;
-        }
-
-        #choices button {
-            padding: 5px 10px;
-            margin: 5px;
-            border-radius: 5px;
-            border: 1px solid #999;
-        }
-
-        #chosenChoice {
-            padding: 10px;
-            background: #333;
-            color: #fff;
-        }
-    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="complements/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <div id="game">
+    
+    <div >
+
+        <div class="chosenChoice"> </div>
+
         <div id="description">
-            <div class="row mt-2">
-                <div class="col-3">
-                    <img class="img-fluid w-100" src="image/face6.jpg" alt="">
+            <div class="d-flex">
+                <div class="">
+                    <img class="rounded-circle" width="150" src="image/face6.jpg" alt="">
+
                 </div>
-                <div class="col-9">
-                    <div class="pt-3">
-                        <h1 class="player-name">Wendy</h1>
-                        <p class="bg-danger p-2">Vida : <span id="life">3133</span></p>
+                <div class=" ms-4">
+                    <div class="mt-2 ps-3 pe-3 bg-light">
+                        <h1 class="text-start">Wendy</h1>
+                        
                     </div>
                 </div>
             </div>
         </div>
-        <h2 id="dialogue"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione quae ducimus eveniet nam
-            repellat nesciunt eos repudiandae atque quos! Mollitia omnis, reprehenderit similique fuga deleniti adipisci
-            molestias officia eos iure, quidem sunt quam architecto nihil inventore ab quis maxime, est veritatis.
-            Officiis ipsam placeat pariatur, quo nesciunt ullam voluptatum quisquam ipsa! Amet inventore nulla modi
-            cumque nemo deserunt ratione in totam quas. At, nisi. Reprehenderit velit voluptatibus nostrum! Ducimus
-            excepturi ipsam commodi repellendus deleniti fugit exercitationem praesentium vitae. Unde sunt, natus amet,
-            autem modi corporis vitae harum neque, dolorem ullam et cum. Inventore recusandae dolore distinctio quia hic
-            molestias voluptatem deleniti, nobis laborum quidem debitis vitae facilis? Quod perferendis assumenda cum
-            perspiciatis quaerat eum? Explicabo optio exercitationem similique porro distinctio praesentium molestiae.1
-        </h2>
-        <div id="choices">
-            <div class="btn-group d-flex justify-content-center">
-                <button class="btn btn-primary" id="first"> primera opcion<button>
-                <button class="btn btn-secondary" id="second">segunda opcion</button>
+        <div class="d-flex justify-content-center">
+            <img src="image/barra.png" class=" barra" alt="">
+        </div>
+        <div class="d-flex justify-content-center">
+            <img src="image/separador.png" class=" separador" alt="">
+        </div>
+
+
+        <div id="content">
+            <p id="text" class="p-3"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione quae ducimus eveniet nam
+                repellat nesciunt eos repudiandae atque quos! Mollitia omnis, reprehenderit similique fuga deleniti adipisci
+                molestias officia eos iure, quidem sunt quam architecto nihil inventore ab quis maxime, est veritatis.
+                Officiis ipsam placeat pariatur, quo nesciunt ullam voluptatum quisquam ipsa! Amet inventore nulla modi
+                cumque nemo deserunt ratione in totam quas. At, nisi. Reprehenderit velit voluptatibus nostrum! Ducimus
+                excepturi ipsam commodi repellendus deleniti fugit exercitationem praesentium vitae. Unde sunt, natus amet,
+                autem modi corporis vitae harum neque, dolorem ullam et cum. Inventore recusandae dolore distinctio quia hic
+                molestias voluptatem deleniti, nobis laborum quidem debitis vitae facilis? Quod perferendis assumenda cum
+                perspiciatis quaerat eum? Explicabo optio exercitationem similique porro distinctio praesentium molestiae.1
+            </p>
+            <div id="choices">
+                <div class="btn-group d-flex justify-content-center">
+                    <button class="btn btn-primary" id="first">primera opcion</button>
+                    <button class="btn btn-secondary" id="second">segunda opcion</button>
+                </div>
             </div>
         </div>
-        <div id="chosenChoice"> </div>
+
+        <div id="scene">
+            <p id="text-scene" class="p-3"></p>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-primary" id="continue">Contiuar</button>
+            </div>
+        </div>
+        
+ 
     </div>
 
-
-    <script> 
-        let game = document.querySelector('#game'); 
-        let description = document.querySelector('#description'); 
-        let dialogue = document.querySelector('#dialogue'); 
-        let choices = document.querySelector('#choices'); 
-        let chosenChoice = document.querySelector('#chosenChoice'); 
-        console.log(chosenChoice)
-        let scenario = 1; 
-        function showDescription() { 
-            description.textContent = ''; 
-            switch (scenario) { 
-                case 1: description.textContent = 'Has despertado en una celda oscura y fría. ¿Qué haces?'; 
-                    break; 
-                case 2: description.textContent = 'El guardián te libera de tu celda, ahora estáis en el pasillo. ¿A derecha o izquierda?'; 
-                break; 
-            } 
-        } 
-        function showDialogue() { 
-            dialogue.textContent = ''; 
-            choices.textContent = ''; 
-            chosenChoice.textContent = ''; 
-            let dialogueText; 
-            let choice1; 
-            let choice2; 
-            switch (scenario) { 
-                case 1: 
-                    dialogueText = '¿Cómo te llamas?'; 
-                    choice1 = 'roberto'; 
-                    choice2 = 'luna'; 
-                    break; 
-                case 2: 
-                    dialogueText = '¿A derecha o izquierda?'; 
-                    choice1 = 'Derecha'; 
-                    choice2 = 'Izquierda'; 
-                    break; 
-            } 
-            dialogue.textContent = dialogueText; 
-            choices.innerHTML = '<button>' + choice1 + '</button> <button>' + choice2 + '</button> '; 
-        } 
-        function chosenChoices() { 
-            chosenChoice.innerHTML = ''; 
-            chosenChoice.innerHTML = 'Has elegido: ' + this.textContent; 
-            switch (this.textContent) { 
-                case 'roberto': 
-                    scenario = 2; 
-                    showDescription(); 
-                    showDialogue(); 
-                    break; 
-                case 'luna': 
-                    scenario = 3; 
-                    showDescription(); 
-                    showDialogue(); 
-                    break; 
-                case 'Derecha': 
-                    scenario = 4; 
-                    showDescription(); 
-                    showDialogue(); 
-                    break; 
-                case 'Izquierda': 
-                    scenario = 5; 
-                    showDescription(); 
-                    showDialogue(); break; 
-            } 
-        } 
-             
-    </script>
+    <script src="db.js"></script>
+    <script src="index.js"></script>
 
 </body>
 
